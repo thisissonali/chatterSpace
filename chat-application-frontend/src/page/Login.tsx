@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     }, [])
 
     const getToken = async (email: string, password: string) => {
-        const URL = import.meta.env.VITE_API_URL;
+        const URL = import.meta.env.VITE_API_URL || "";
         const res = await fetch(`${URL}/auth/signup`, {
             method: 'post',
             body: JSON.stringify({ email, password }),
